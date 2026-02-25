@@ -1,22 +1,32 @@
 from app import app
 from flask import render_template, request, redirect, url_for, flash
+from datetime import date
 
 
 ###
 # Routing for your application.
 ###
 
+
+def format_date_joined(year, month, day):
+    date_joined = date(year, month, day)
+    return "Joined " + date_joined.strftime('%B, %Y')
+
 @app.route('/')
 def home():
     """Render website's home page."""
     return render_template('home.html')
 
+@app.route("/profile")
+def profile():
+    return render_template('profile.html', name="Rochele Webster", date_joined=format_date_joined(2020, 3, 24))
 
 @app.route('/about/')
 def about():
     """Render the website's about page."""
-    return render_template('about.html', name="Mary Jane")
+    return render_template('about.html', name="Rochele Webster")
 
+    
 
 ###
 # The functions below should be applicable to all Flask apps.
