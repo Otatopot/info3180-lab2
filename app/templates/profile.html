@@ -3,7 +3,7 @@
 {% block main %}
 <div id="profile">
     <div id="box">
-        <img src="">
+        <img src="{{ url_for('static', filename='stars.jpg') }}">
         <h1>{{ name }}</h1>
         <p>@otatopot</p>
         <p>Location</p>
@@ -11,7 +11,7 @@
         
     </div>
     <div id="bio">
-        <p>Hello it's me! {{ name }}!! Biography stuff</p>
+        <p>A General Chemistry and Computer Science student who's trying really hard to survive her final semester ^^ <br> It's rough out here... </p>
     </div>
     <div id="stats">
         <div id="posts">
